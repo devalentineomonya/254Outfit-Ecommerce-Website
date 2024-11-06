@@ -1,31 +1,39 @@
-"use client";
 import React, { useState } from "react";
 import NavbarDesktopCategories from "./NavbarDesktopCategories";
 import { SlLocationPin } from "react-icons/sl";
 import { BiChevronDown } from "react-icons/bi";
 import { RxReload } from "react-icons/rx";
 import Link from "next/link";
+import { navLinks } from "./navbarNavigation";
 
 const NavbarDesktop = () => {
-  
   const [showRecentlyViewed, setShowRecentlyViewed] = useState(false);
 
-  const navLinks = [
-    { name: "Products", href: "/products" },
-    { name: "Contact Us", href: "/contact-us" },
-    { name: "About Us", href: "/about-us" },
-    { name: "My Account", href: "/my-account" },
-  ];
-
   return (
-    <header className="w-full h-14 bg-sky-100 flex items-center justify-center">
+    <header className="w-full h-14 bg-sky-100  hidden lg:flex items-center justify-center sticky top-0 px-5">
       <div className="w-full max-w-8xl flex items-center gap-x-6 relative">
-        <NavbarDesktopCategories/>
+        <NavbarDesktopCategories />
         <nav>
-          <ul className="flex items-center gap-x-5 text-base">
+          <ul className="flex items-center gap-x-5 text-sm">
             {navLinks.map((link) => (
-              <li key={link.name} className="whitespace-nowrap hover:text-blue-800">
-                <Link href={link.href}>{link.name}</Link>
+              <li
+                key={link.name}
+                className="whitespace-nowrap"
+              >
+                {link.href ? (
+                  <Link className=" hover:text-blue-800" href={link.href}>{link.name}</Link>
+                ) : (
+                  <nav className="relative group h-full py-6">
+                    <div className=" hover:text-blue-800 cursor-pointer flex items-center gap-x-2">{link.name} <BiChevronDown size={16}/></div>
+                    <ul className="absolute hidden mt-0 -ml-6 min-w-56 p-6 shadow bg-white group-hover:mt-5 group-hover:block animate-drop">
+                      {link?.subLinks?.map((subLink) => (
+                        <li key={subLink.name} className="py-2  hover:text-blue-800">
+                          <Link href={subLink.href}>{subLink.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                )}
               </li>
             ))}
           </ul>

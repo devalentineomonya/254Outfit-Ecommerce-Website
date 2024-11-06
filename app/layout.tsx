@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavbarMain from "@/components/common/navbar/NavbarMain";
 import { Inter } from "next/font/google";
+import { SidebarProvider } from "@/context/sidebarContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <NavbarMain />
-        {children}
+        <SidebarProvider>
+          <NavbarMain />
+
+          {children}
+        </SidebarProvider>
       </body>
     </html>
   );
