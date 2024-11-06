@@ -7,7 +7,7 @@ import { RxReload } from "react-icons/rx";
 import Link from "next/link";
 
 const NavbarDesktop = () => {
-  const [showSideMenu, setShowSideMenu] = useState(false);
+  
   const [showRecentlyViewed, setShowRecentlyViewed] = useState(false);
 
   const navLinks = [
@@ -19,8 +19,8 @@ const NavbarDesktop = () => {
 
   return (
     <header className="w-full h-14 bg-sky-100 flex items-center justify-center">
-      <div className="w-full relative max-w-8xl flex items-center gap-x-6 relative">
-        <NavbarDesktopCategories setShowSideMenu={setShowSideMenu} />
+      <div className="w-full max-w-8xl flex items-center gap-x-6 relative">
+        <NavbarDesktopCategories/>
         <nav>
           <ul className="flex items-center gap-x-5 text-base">
             {navLinks.map((link) => (

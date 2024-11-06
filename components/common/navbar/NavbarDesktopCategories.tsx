@@ -3,11 +3,7 @@ import { CgChevronRight } from "react-icons/cg";
 import { useRouter, usePathname } from "next/navigation";
 import { productCategories } from "./navbarCotegories";
 
-const NavbarDesktopCategories = ({
-  setShowSideMenu,
-}: {
-  setShowSideMenu: (state: boolean) => void;
-}) => {
+const NavbarDesktopCategories = () => {
   const [selectedCategory, setSelectedCategory] = useState<
     (typeof productCategories)[0] | null
   >(null);
@@ -15,7 +11,7 @@ const NavbarDesktopCategories = ({
   const pathname = usePathname();
 
   const handleSelect = (page: (typeof productCategories)[0]): void => {
-    setShowSideMenu(false);
+  
     setSelectedCategory(page);
     router.push(page.link);
   };
