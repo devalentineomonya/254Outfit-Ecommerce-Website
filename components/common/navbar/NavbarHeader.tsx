@@ -19,7 +19,7 @@ const NavbarHeader = () => {
   ];
 
   return (
-    <header className="h-11 w-full px-4 md:px-2 flex justify-center items-center border-b border-gray-200 text-gray-700 ">
+    <header className="h-11 w-full px-4 md:px-2 flex justify-center items-center border-b border-gray-200 text-gray-700  ">
       <div className="w-full h-full max-w-8xl flex items-center justify-between">
         <p className="text-sm animate-marquee md:animate-none whitespace-nowrap">
           Welcome to 254 Outfits

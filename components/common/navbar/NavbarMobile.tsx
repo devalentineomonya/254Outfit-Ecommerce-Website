@@ -60,12 +60,12 @@ const NavbarMobile = () => {
   return (
     <header
       className={`h-full w-full bg-black fixed top-0 right-0 transition-all ease-in-out duration-500 ${
-        isOpen ? "bg-opacity-80 z-40" : "bg-opacity-0 -z-10"
+        isOpen ? "bg-opacity-80 z-50" : "bg-opacity-0 -z-10"
       }`}
     >
       <button
         onClick={toggleSidebar}
-        className="absolute right-4 top-4 text-white z-50"
+        className={`${isOpen ? "inline-flex item-center justify-center w-28" : "hidden"} absolute right-4 top-4 text-white z-50`}
       >
         <RxCross1 size={32} />
       </button>
@@ -82,7 +82,7 @@ const NavbarMobile = () => {
               className="w-full text-white border-none outline-none py-2 bg-transparent text-sm"
               placeholder="Search"
             />
-            <button type="submit" className="text-white">
+            <button type="submit" className={` text-white`}>
               <BiSearch />
             </button>
           </div>

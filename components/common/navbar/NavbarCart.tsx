@@ -13,9 +13,9 @@ const NavbarCart = ({
 
     <aside
     onClick={() => setShowCart(false)}
-      className={`w-full h-full absolute max-w-[296px] ${
+      className={`w-full h-full absolute max-w-[320px] ${
         showCart ? "right-0" : "-right-96"
-      } bg-white shadow-md py-6 px-8 transition-all duration-500 ease-in-out`}
+      } bg-white shadow-md py-6 px-8 transition-all duration-500 delay-100 ease-in-out`}
     >
       <div className="flex justify-between items-center w-full border-b pb-6">
         <h5 className="font-semibold uppercase whitespace-nowrap">Shopping Cart</h5>

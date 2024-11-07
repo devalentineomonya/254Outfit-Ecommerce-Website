@@ -10,7 +10,7 @@ const NavbarDesktop = () => {
   const [showRecentlyViewed, setShowRecentlyViewed] = useState(false);
 
   return (
-    <header className="w-full h-14 bg-sky-100  hidden lg:flex items-center justify-center sticky top-0 px-5">
+    <header className="w-full h-14 bg-sky-100  hidden lg:flex items-center justify-center sticky top-0  z-40 px-5">
       <div className="w-full max-w-8xl flex items-center gap-x-6 relative">
         <NavbarDesktopCategories />
         <nav>

@@ -5,16 +5,16 @@ import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 import { useIsMobile } from "@/hooks/useMobile";
 const HeroCarouselItem = () => {
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
   return (
     <figure className="relative isolate w-full h-full rounded-md p-4 flex items-center justify-between flex-row-reverse md:flex-row gap-x-5 bg-[linear-gradient(180deg,_#0F2B28_25%,_#275f67_60%,_#5BBAB2_100%)] overflow-hidden">
       <figure className="flex-1 w-1/2  flex items-center justify-center ">
         <Image
-        className="-z-10"
+          className="-z-10"
           priority
           placeholder="empty"
           src={image1}
-fill={isMobile}
+          fill={isMobile}
           objectFit="cover"
           alt="Hero image"
         />
@@ -28,7 +28,9 @@ fill={isMobile}
         </h1>
         <h6 className="flex items-center gap-x-2 text-white font-normal whitespace-nowrap">
           <span>Starting at</span>
-          <p className="text-xl lg:text-2xl font-bold my-2 xl:my-3">Ksh 400.00</p>
+          <p className="text-xl lg:text-2xl font-bold my-2 xl:my-3">
+            Ksh 400.00
+          </p>
         </h6>
         <Link
           className="bg-white px-3 py-2 text-sm rounded-full flex items-center gap-x-3"

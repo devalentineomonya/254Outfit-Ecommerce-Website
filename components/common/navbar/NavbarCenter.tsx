@@ -15,7 +15,7 @@ const NavbarCenter = ({
   const isMobile = useIsMobile();
   const {toggleSidebar} = useSidebar()
   return (
-    <section className="h-16 lg:h-20 w-full flex items-center justify-center px-4 md:px-2 sticky top-0 bg-white shadow-md lg:shadow-none lg:static">
+    <section className="h-16 lg:h-20 w-full flex items-center justify-center px-4 md:px-2 sticky top-0 z-50 bg-white shadow-md lg:shadow-none lg:static">
       <div className="w-full max-w-8xl flex items-center ">
         <button onClick={toggleSidebar} className=" inline-block lg:hidden">
             <BiMenu size={32} />

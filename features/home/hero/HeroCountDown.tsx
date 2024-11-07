@@ -10,7 +10,7 @@ const HeroCountDown = () => {
       <div className="max-h-64 w-full hidden md:block">
         <Image src={image7} alt="Hero image" priority  />
       </div>
-      <div className="flex items-center gap-x-2 -mt-12">
+      <div className="flex items-center gap-x-2 md:-mt-16  xl:-mt-12">
         <div className="w-14 lg:w-16 rounded-md bg-white aspect-square  shadow-sm grid place-content-center">
           <h6 className="font-medium text-black/80 text-xl">240</h6>
           <p className="font-normal text-sm text-black/50">Mins</p>
