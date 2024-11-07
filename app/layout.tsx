@@ -21,8 +21,9 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <SidebarProvider>
           <NavbarMain />
-
-          {children}
+          <main className="flex items-start justify-center bg-gray-50">
+            <div className="w-full max-w-8xl">{children}</div>
+          </main>
         </SidebarProvider>
       </body>
     </html>

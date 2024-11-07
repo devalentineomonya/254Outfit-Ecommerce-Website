@@ -1,8 +1,13 @@
 import React from 'react'
+import Hero from '@/features/home/hero/Hero'
+import Collections from '@/features/home/collections/Collections'
 
 const Home = () => {
   return (
-    <div className='pb-[1000000px]'>Home</div>
+    <main className='w-full h-fit p-2 lg:p-0'>
+      <Hero/>
+      <Collections/>
+    </main>
   )
 }
 
