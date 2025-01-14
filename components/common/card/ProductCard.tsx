@@ -49,9 +49,8 @@ const ProductCard = () => {
             <span>In Stock</span>
           </p>
         </div>
-          <bdi>Kes 3,000</bdi> - <bdi>Kes 6,000</bdi>
-        <p className="text-base font-medium flex items-center justify-start gap-x-2 whitespace-nowrap my-0.5 ">
-        </p>
+        <bdi>Kes 3,000</bdi> - <bdi>Kes 6,000</bdi>
+        <p className="text-base font-medium flex items-center justify-start gap-x-2 whitespace-nowrap my-0.5 "></p>
         <Link
           className="py-2 w-full text-center text-blue-500 border border-blue-500 text-sm  mt-2 inline-flex rounded items-center justify-center hover:text-white hover:bg-blue-500"
           href="/product/product-name"
