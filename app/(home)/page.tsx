@@ -1,8 +1,9 @@
 import React from "react";
-import Hero from "@/features/home/hero/Hero";
-import Collections from "@/features/home/collections/Collections";
-import Banner from "@/features/home/banner/Banner";
-import ForYouSlider from "@/features/home/ForYou/ForYouSlider";
+import Hero from "@/screens/home/hero/Hero";
+import Collections from "@/screens/home/collections/Collections";
+import Banner from "@/screens/home/banner/Banner";
+import ForYouSlider from "@/screens/home/foryou/ForYouSlider";
+import TopVendor from "@/screens/home/topvendor/TopVendor";
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       <Hero />
       <Collections />
       <Banner />
-      <ForYouSlider/>
+      <ForYouSlider />
+      <TopVendor />
     </main>
   );
 };

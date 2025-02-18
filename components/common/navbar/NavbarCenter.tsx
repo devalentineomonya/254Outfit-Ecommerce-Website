@@ -3,27 +3,23 @@ import { productCategories } from "./navbarNavigation";
 import { BiMenu, BiSearch } from "react-icons/bi";
 import { LiaUser } from "react-icons/lia";
 import { BsTelephone, BsHandbag } from "react-icons/bs";
-import Image from "next/image";
-import Logo from "@/public/logo.png";
 import { useIsMobile } from "@/hooks/useMobile";
 import { useSidebar } from "@/context/sidebarContext";
+import Logo from "../logo/Logo";
 const NavbarCenter = ({
   setShowCart,
 }: {
   setShowCart: (state: boolean) => void;
 }) => {
   const isMobile = useIsMobile();
-  const {toggleSidebar} = useSidebar()
+  const { toggleSidebar } = useSidebar();
   return (
     <section className="h-16 lg:h-20 w-full flex items-center justify-center px-4 md:px-2 sticky top-0 z-50 bg-white shadow-md lg:shadow-none lg:static">
       <div className="w-full max-w-8xl flex items-center ">
         <button onClick={toggleSidebar} className=" inline-block lg:hidden">
-            <BiMenu size={32} />
+          <BiMenu size={32} />
         </button>
-        <div className="h-full font-bold text-xl flex items-center">
-          <Image src={Logo} className="w-10 aspect-square" alt="Logo" />
-          <span className="-ml-2">OutFit</span>
-        </div>
+        <Logo />
         <div className="w-full flex-1 flex items-center justify-center px-4">
           <div className="w-full max-w-3xl min-h-11 rounded-full border px-3 hidden  md:flex items-center justify-center  ">
             <select

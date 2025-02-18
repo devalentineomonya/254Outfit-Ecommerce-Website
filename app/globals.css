@@ -13,12 +13,12 @@
     clip-path: polygon(51% 30%, 14% 100%, 88% 100%);
 
   }
-  
+
 }
 .swiper-button-next{
   @apply text-white text-sm
 }
 
 body{
-  
+
 }
