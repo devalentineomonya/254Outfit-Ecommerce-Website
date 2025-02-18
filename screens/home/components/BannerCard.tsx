@@ -7,7 +7,7 @@ const BannerCard = ()=> {
   return (
     <figure className="col-span-12 md:col-span-6 h-full rounded-md grid grid-cols-12 overflow-hidden py-3 px-6 relative isolate text-white">
       <div className="col-span-7 h-full pr-2 ">
-        <Image fill objectFit="cover" src={Image8}  alt="Sales Banner" className="absolute object-cover -z-10"/> 
+        <Image fill src={Image8}  alt="Sales Banner" className="absolute object-cover -z-10"/>
       </div>
       <div className="col-span-5 h-full">
         <h6 className="text-lg font-normal uppercase pt-3">Best Seller</h6>
@@ -20,7 +20,7 @@ const BannerCard = ()=> {
           </p>
         </div>
         <Link
-        
+
           className="   text-blue-700 hover:bg-gray-50 bg-white px-3 py-2 text-sm rounded-full flex items-center gap-x-3 mt-4 max-w-32"
           href="/shop"
         >
