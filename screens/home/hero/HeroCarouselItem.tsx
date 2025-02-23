@@ -7,7 +7,8 @@ import { useIsMobile } from "@/hooks/useMobile";
 const HeroCarouselItem = () => {
   const isMobile = useIsMobile();
   return (
-    <figure className="relative isolate w-full h-full rounded-md p-4 flex items-center justify-between flex-row-reverse md:flex-row gap-x-5 bg-[linear-gradient(180deg,_#0F2B28_25%,_#275f67_60%,_#5BBAB2_100%)] overflow-hidden">
+    <figure className="relative isolate w-full h-full rounded-md p-4 flex items-center justify-between flex-row-reverse
+     md:flex-row gap-x-5 bg-[linear-gradient(180deg,_#0F2B28_25%,_#275f67_60%,_#5BBAB2_100%)] overflow-hidden">
       <figure className="flex-1 w-1/2  flex items-center justify-center ">
         <Image
           className="-z-10"

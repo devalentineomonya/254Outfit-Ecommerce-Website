@@ -59,7 +59,7 @@ const NavbarMobile = () => {
 
   return (
     <header
-      className={`h-full w-full bg-black fixed top-0 right-0 z-50  ${
+      className={`h-full w-full bg-black fixed top-0 z-50  ${
         isOpen ?"bg-opacity-80 right-0" : " bg-opacity-0 -right-[5000px]"
       }`}
     >

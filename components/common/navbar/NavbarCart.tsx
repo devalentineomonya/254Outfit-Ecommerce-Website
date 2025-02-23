@@ -9,7 +9,7 @@ const NavbarCart = ({
   showCart: boolean;
 }) => {
   return (
-    <header  onClick={() => setShowCart(false)} className={`h-screen w-full  fixed top-0 right-0 bg-black z-50  ${ showCart ? "bg-opacity-30 right-0" : " bg-opacity-0 -right-[5000px]" }`}>
+    <header  onClick={() => setShowCart(false)} className={`h-screen w-full  fixed top-0  bg-black z-50  ${ showCart ? "bg-opacity-30 right-0" : " bg-opacity-0 -right-[5000px]" }`}>
 
     <aside
     onClick={() => setShowCart(false)}
