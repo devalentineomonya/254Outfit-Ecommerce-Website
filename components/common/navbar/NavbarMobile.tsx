@@ -1,9 +1,10 @@
+"use client"
 import React, { useState } from "react";
 import { BiChevronRight, BiSearch } from "react-icons/bi";
 import { navLinks, productCategories } from "./navbarNavigation";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import { useSidebar } from "@/context/sidebarContext";
+import { useSidebar } from "@/hooks/useSidebar";
 
 const NavbarMobile = () => {
   const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);

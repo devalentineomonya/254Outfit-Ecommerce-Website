@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 interface NavbarSelectProps {
   options: string[];
@@ -36,7 +37,7 @@ const NavbarSelect: React.FC<NavbarSelectProps> = ({
               onClick={() => handleSelect(option)}
               className="pr-10 pl-1 py-1  hover:bg-gray-100  hover:text-blue-700 "
             >
-             <span>{option}</span> 
+             <span>{option}</span>
             </li>
           ))}
         </ul>

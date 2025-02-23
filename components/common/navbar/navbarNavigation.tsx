@@ -44,7 +44,7 @@ export const productCategories = [
 export const navLinks = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
-  { name: "Venders", href: "/venders" },
+  { name: "Vendor", href: "/vendor" },
   {
     name: "Pages",
     subLinks: [
@@ -52,9 +52,8 @@ export const navLinks = [
       { name: "Error 404", href: "404" },
       { name: "About Us", href: "/about-us" },
       { name: "Contact Us", href: "/contact-us" },
-      { name: "Coming Soon", href: "coming-soon" },
-      { name: "Become a Vender", href: "/become-a-vender" },
+      { name: "Become a Vendor", href: "/become-a-vendor" },
     ],
   },
-  { name: "Blogs", href: "/blogs" },
+  { name: "Blog", href: "/blog" },
 ];

@@ -1,16 +1,10 @@
 import React from "react";
-import NavbarSelect from "./NavbarSelect";
 import Link from "next/link";
 import { BiUser } from "react-icons/bi";
+import NavbarSelector from "./NavbarSelector";
 
 const NavbarHeader = () => {
-  const handleLanguageSelect = (value: string) => {
-    console.log("Selected language:", value);
-  };
 
-  const handleCurrencySelect = (value: string) => {
-    console.log("Selected currency:", value);
-  };
 
   const headerLinks = [
     { name: "Contact Us", link: "/contact-us" },
@@ -26,18 +20,7 @@ const NavbarHeader = () => {
         </p>
 
         <div className="flex items-center">
-          <div className="hidden sm:flex relative px-3">
-            <NavbarSelect
-              options={["ENG", "FRA"]}
-              initialSelected="ENG"
-              onSelect={handleLanguageSelect}
-            />
-            <NavbarSelect
-              options={["KES", "USD"]}
-              initialSelected="KES"
-              onSelect={handleCurrencySelect}
-            />
-          </div>
+        <NavbarSelector/>
           <div className="pl-4 border-l border-l-gray-400 hidden md:inline-block">
             <nav className="flex">
               <ul className="flex space-x-5">

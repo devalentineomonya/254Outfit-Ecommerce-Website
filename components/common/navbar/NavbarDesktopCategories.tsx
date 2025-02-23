@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import { CgChevronRight } from "react-icons/cg";
 import { useRouter, usePathname } from "next/navigation";
@@ -41,7 +42,7 @@ const NavbarDesktopCategories = () => {
           <div
             key={category.name}
             title={category.name.toLowerCase()}
-            className="py-1 w-full my-1 text-sm border-b" 
+            className="py-1 w-full my-1 text-sm border-b"
             onClick={() => handleSelect(category)}
           >
             <input
