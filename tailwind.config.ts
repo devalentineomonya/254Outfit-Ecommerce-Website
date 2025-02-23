@@ -14,6 +14,8 @@ const config: Config = {
       },
       screens: {
         lg: "62rem",
+        xs:"36rem",
+        xxs:"30rem"
       },
       keyframes: {
         marquee: {
