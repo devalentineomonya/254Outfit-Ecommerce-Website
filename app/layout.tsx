@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavbarMain from "@/components/common/navbar/NavbarMain";
 import { Inter } from "next/font/google";
-import { SidebarProvider } from "@/context/sidebarContext";
 import Footer from "@/components/common/footer/Footer";
 import "swiper/css/bundle";
+import Compare from "@/components/common/compare/Compare";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,13 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50 antialiased`}>
-        <SidebarProvider>
-          <NavbarMain />
-          <main className="flex items-start justify-center min-h-screen">
-            <div className="w-full max-w-8xl">{children}</div>
-          </main>
-          <Footer />
-        </SidebarProvider>
+        <NavbarMain />
+        <main className="flex items-start justify-center">
+          <div className="w-full max-w-8xl">{children}</div>
+        </main>
+        <Footer />
+        <Compare/>
       </body>
     </html>
   );
