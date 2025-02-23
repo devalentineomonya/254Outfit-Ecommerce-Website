@@ -7,7 +7,7 @@ const HeroCountDown = () => {
   return (
     <figure className="flex flex-col justify-between md:justify-center items-center p-0 md:p-8">
       <h1 className="font-medium whitespace-nowrap text-xl xl:text-2xl text-white capitalize mb-2">Hot Deals Of The Day</h1>
-      <div className="max-h-64 w-full hidden md:block">
+      <div className="max-h-64 w-full hidden md:block overflow-hidden">
         <Image src={image7} alt="Hero image" priority  />
       </div>
       <div className="flex items-center gap-x-2 md:-mt-16  xl:-mt-12">

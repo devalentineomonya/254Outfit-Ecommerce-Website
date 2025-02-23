@@ -10,7 +10,7 @@ const VendorCard = () => {
     <div className="bg-white">
       <div className="flex flex-col justify-center">
         <div className="flex items-center gap-x-2 mb-3">
-          <div className="w-[4.5rem] aspect-square relative">
+          <div className="w-[4.5rem] aspect-square relative bg-gray-50">
             <Image
               src={vendor}
               alt="Vendor image"
@@ -31,7 +31,8 @@ const VendorCard = () => {
           </div>
         </div>
         <div className="grid grid-cols-12 h-48 gap-x-2">
-          <div className="col-span-8 relative w-full">
+          <div className="col-span-8 relative w-full hover:border hover:border-blue-500 transition-all ease-in-out duration-300">
+            
             <Image
               src={product1}
               alt="Vendor image"
@@ -41,7 +42,7 @@ const VendorCard = () => {
             />
           </div>
           <div className="col-span-4 grid grid-rows-2 gap-y-2">
-            <div className="relative">
+            <div className="relative  hover:border hover:border-blue-500 transition-all ease-in-out duration-300">
               <Image
                 src={product2}
                 alt="Vendor image"
@@ -50,7 +51,7 @@ const VendorCard = () => {
                 fill
               />
             </div>
-            <div className="relative">
+            <div className="relative  hover:border hover:border-blue-500 transition-all ease-in-out duration-300">
               <Image
                 src={product3}
                 alt="Vendor image"

@@ -59,13 +59,13 @@ const NavbarMobile = () => {
 
   return (
     <header
-      className={`h-full w-full bg-black fixed top-0 right-0 transition-all ease-in-out duration-500 ${
-        isOpen ? "bg-opacity-80 z-50" : "bg-opacity-0 -z-10"
+      className={`h-full w-full bg-black fixed top-0 right-0 z-50  ${
+        isOpen ?"bg-opacity-80 right-0" : " bg-opacity-0 -right-[5000px]"
       }`}
     >
       <button
         onClick={toggleSidebar}
-        className={`${isOpen ? "inline-flex item-center justify-center w-28" : "hidden"} absolute right-4 top-4 text-white z-50`}
+        className={`${isOpen ? "inline-flex item-center justify-center w-28" : "hidden"} absolute right-4 top-4 text-white z-[60]`}
       >
         <RxCross1 size={32} />
       </button>

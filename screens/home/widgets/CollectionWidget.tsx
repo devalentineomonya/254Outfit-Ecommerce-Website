@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import CollectionProductCard from "../components/CollectionProductCard";
-import { MdOutlineChevronLeft, MdChevronRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 
 
 export const CollectionWidget = () => {
@@ -37,7 +37,7 @@ export const CollectionWidget = () => {
             }}
             className="collection-swiper-button-prev custom-nav-button"
           >
-            <MdOutlineChevronLeft size={28} />
+            <GoChevronLeft size={24} />
           </button>
           <button
             style={{
@@ -46,7 +46,7 @@ export const CollectionWidget = () => {
             }}
             className="collection-swiper-button-next custom-nav-button"
           >
-            <MdChevronRight size={28} />
+            <GoChevronRight size={24} />
           </button>
         </div>
       </div>
@@ -85,7 +85,7 @@ export const CollectionWidget = () => {
           <SwiperSlide  className="h-full">
             <CollectionProductCard />
           </SwiperSlide>
-          {/* Add more slides as needed */}
+
         </Swiper>
       </div>
     </section>

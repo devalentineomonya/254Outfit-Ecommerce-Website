@@ -1,19 +1,34 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import HeroCarouselItem from "./HeroCarouselItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import "swiper/swiper-bundle.css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
 import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 import { useIsMobile } from "@/hooks/useMobile";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const HeroCarousel = () => {
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+      .hero-nav-button::before,
+      .hero-nav-button::after {
+        display: none !important;
+      }
+    `;
+    document.head.appendChild(styleSheet);
+
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
+  }, []);
+
   return (
-    <div className="w-full md:w-2/3 h-full">
+    <div className="w-full md:w-2/3 h-full relative">
       <Swiper
         className="h-full"
         cssMode={true}
@@ -21,50 +36,57 @@ const HeroCarousel = () => {
         keyboard={true}
         modules={[Navigation, Pagination]}
         spaceBetween={20}
-        navigation={isMobile ? false : {
-          
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+        navigation={{
+          nextEl: ".hero-next",
+          prevEl: ".hero-prev",
           disabledClass: "opacity-50",
-          
         }}
-        pagination={{ 
+        pagination={{
           clickable: true,
+          renderBullet: (_, className) => {
+            return `
+              <span class="${className} w-3.5 h-3.5 rounded-full inline-flex items-center justify-center
+              bg-gray-200 [&.swiper-pagination-bullet-active]:bg-white [&.swiper-pagination-bullet-active]:px-2
+              [&.swiper-pagination-bullet-active]:rounded-md duration-300 transition-all ease-in-out"></span>
+            `;
+          },
         }}
         slidesPerView={1}
-        color="white"
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          576: { slidesPerView: 1 },
-          768: { slidesPerView: 1 },
-          992: { slidesPerView: 1 },
-        }}
       >
-        <SwiperSlide className="h-ful">
-          <HeroCarouselItem />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <HeroCarouselItem />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <HeroCarouselItem />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <HeroCarouselItem />
-        </SwiperSlide>
-        <button
-          style={{ color: "white", fontFamily:"monospace", fontWeight:"thin", fontSize:"14px", marginLeft:"10px" }}
-          className="swiper-button-prev absolute  z-10 text-white bg-opacity-50 hover:bg-opacity-100 rounded-full p-2 hidden md:inline-block"
-        >
-          <GoChevronLeft size={14} />
-        </button>
-        <button
-          style={{ color: "white", fontFamily:"monospace", fontWeight:"thin", fontSize:"14px", marginRight:"10px"}}
-          className="swiper-button-next absolute  z-10 text-white bg-opacity-50 hover:bg-opacity-100 rounded-full p-2 hidden md:inline-block"
-        >
-          <GoChevronRight size={14} />
-        </button>
+        {[...Array(4)].map((_, index) => (
+          <SwiperSlide key={index}>
+            <HeroCarouselItem />
+          </SwiperSlide>
+        ))}
       </Swiper>
+
+      {/* Custom Navigation Buttons */}
+      {!isMobile && (
+        <>
+          <button
+            className="hero-prev hero-nav-button absolute left-0 top-1/2 -translate-y-1/2 z-10
+              text-white rounded-full p-2 transition-all"
+            style={{
+              fontFamily: "monospace",
+              fontSize: "14px",
+              marginLeft: "10px",
+            }}
+          >
+            <GoChevronLeft size={28} />
+          </button>
+          <button
+            className="hero-next hero-nav-button absolute right-0 top-1/2 -translate-y-1/2 z-10
+              text-white rounded-full p-2 transition-all"
+            style={{
+              fontFamily: "monospace",
+              fontSize: "14px",
+              marginRight: "10px",
+            }}
+          >
+            <GoChevronRight size={28} />
+          </button>
+        </>
+      )}
     </div>
   );
 };

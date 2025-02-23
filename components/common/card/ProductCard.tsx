@@ -1,7 +1,7 @@
 import React from "react";
 import Image2 from "@/public/products/image2.png";
 import Image, { StaticImageData } from "next/image";
-import { BsStarFill } from "react-icons/bs";
+import { BsArrowRight, BsStarFill } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa6";
 import { PiScalesThin } from "react-icons/pi";
 import { GoSearch } from "react-icons/go";
@@ -11,7 +11,7 @@ import LoaderWrapper from "../loader/LoaderWrapper";
 const productData = {
   name: "Lenovo Idea Pad",
   href: "/product/ame",
-  priceRange: { min: 3000, max: 6000 },
+price:3000,
   discount: "26% OFF",
   rating: { stars: 4, totalReviews: 2 },
   inStock: true,
@@ -27,8 +27,8 @@ const ProductImage = ({
   link: string;
 }) => (
   <LoaderWrapper height="h-2/3" isLoading={false}>
-    <Link href={link} className="relative block w-full h-2/3">
-      <Image src={src} alt={alt} priority />
+    <Link href={link} className="relative block w-full h-full">
+      <Image src={src} alt={alt} priority className="object-cover absolute w-full h-full" />
     </Link>
 <ProductActions />
   </LoaderWrapper>
@@ -51,24 +51,22 @@ const ProductActions = ({ isLoading }: { isLoading?: boolean }) => (
 
 const ProductCard = () => {
   return (
-    <div className="relative w-full aspect-[9/16] max-h-[438px] rounded p-2 bg-white group/product">
+    <div className="relative w-full aspect-[9/14.5] rounded p-2 bg-white group/product">
       <ProductImage src={Image2} alt="Product Image" link={productData.href} />
-      {/* Discount Label */}
       <div className="cursor-default w-16 h-5 whitespace-nowrap bg-[#ff9933] text-white text-[13px] font-medium absolute top-4 left-4 rounded-[4px] grid place-content-center">
         {productData.discount}
       </div>
 
-      <article className="h-1/3 p-2">
-        {/* Product Name */}
-        <h3 className="text-base font-normal text-gray-600">
+      <article className="h-fit pt-2">
+        <h3 className=" text-sm md:text-base font-normal text-gray-600">
           <Link href={productData.href}>{productData.name}</Link>
         </h3>
-        {/* Rating & Stock */}
-        <div className="flex items-center justify-between my-2">
+        <div className="flex items-center justify-between my-1">
           <div className="flex items-center gap-x-0.5">
             {[...Array(5)].map((_, index) => (
               <BsStarFill
                 key={index}
+                size={12}
                 className={
                   index < productData.rating.stars
                     ? "text-[#ff9933]"
@@ -85,15 +83,16 @@ const ProductCard = () => {
             <span>{productData.inStock ? "In Stock" : "Out of Stock"}</span>
           </p>
         </div>
-        {/* Price */}
-        <bdi>Kes {productData.priceRange.min}</bdi> -{" "}
-        <bdi>Kes {productData.priceRange.max}</bdi>
-        {/* CTA Button */}
+        <bdi className=" text-sm md:text-base font-medium text-gray-700">Kes {productData.price}</bdi>
+
         <Link
           className="py-2 w-full text-center text-blue-500 border border-blue-500 text-sm mt-2 inline-flex rounded items-center justify-center hover:text-white hover:bg-blue-500"
           href={productData.href}
         >
-          Select Options
+          <span className="sm:block hidden">Select Options</span>
+          <span className="block sm:hidden">
+            <BsArrowRight size={20}/>
+          </span>
         </Link>
       </article>
     </div>

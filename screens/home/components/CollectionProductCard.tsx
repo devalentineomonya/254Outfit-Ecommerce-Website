@@ -13,13 +13,13 @@ const CollectionProductCard = () => {
   };
   return (
     <figure className="h-full w-full bg-white col-span-4">
-      <LoaderWrapper height="h-4/5" isLoading={false}>
-        <Link href="/product/1" className="relative block bg-green-200 w-full h-4/5">
+      <LoaderWrapper height="h-3/4" isLoading={false}>
+        <Link href="/product/1" className="relative block w-full h-full">
           <Image
             src={Image2}
             alt="Product Image"
             priority
-            className="object-cover"
+            className="object-cover absolute w-full h-full"
             fill
           />
         </Link>

@@ -24,9 +24,9 @@ const NavbarHeader = () => {
         <p className="text-sm animate-marquee md:animate-none whitespace-nowrap">
           Welcome to 254 Outfits
         </p>
-        
+
         <div className="flex items-center">
-          <div className="flex relative px-3">
+          <div className="hidden sm:flex relative px-3">
             <NavbarSelect
               options={["ENG", "FRA"]}
               initialSelected="ENG"
