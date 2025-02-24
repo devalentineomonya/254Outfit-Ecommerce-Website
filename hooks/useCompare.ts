@@ -9,7 +9,7 @@ interface CompareStore {
 }
 
 export const useCompare = create<CompareStore>((set) => ({
-  isOpen: true,
+  isOpen: false,
   openCompare: () => set({ isOpen: true }),
   closeCompare: () => set({ isOpen: false }),
   toggleCompare: () => set((state) => ({ isOpen: !state.isOpen })),
