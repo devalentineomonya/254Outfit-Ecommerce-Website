@@ -51,7 +51,7 @@ const ProductActions = ({ isLoading }: { isLoading?: boolean }) => (
 
 const ProductCard = () => {
   return (
-    <div className="relative w-full aspect-[9/14] rounded p-2 bg-white group/product">
+    <div className="relative w-full aspect-[9/14] rounded p-2 bg-white group/product flex-shrink-0">
       <ProductImage src={Image2} alt="Product Image" link={productData.href} />
       <div className="cursor-default w-16 h-5 whitespace-nowrap bg-[#ff9933] text-white text-[13px] font-medium absolute top-4 left-4 rounded-[4px] grid place-content-center">
         {productData.discount}
