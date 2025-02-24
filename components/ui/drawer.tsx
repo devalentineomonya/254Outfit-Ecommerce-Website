@@ -42,6 +42,7 @@ const DrawerContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
    <DrawerPortal>
       <DrawerOverlay />
+      <DrawerTitle className="sr-only"/>
       <DrawerPrimitive.Content
          ref={ref}
          className={cn(
