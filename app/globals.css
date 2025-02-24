@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.condol{
-  animation: name duration timing-function delay iteration-count direction fill-mode;
-}
-
 @layer utilities {
-
   .clip-path-triangle {
     clip-path: polygon(51% 30%, 14% 100%, 88% 100%);
-
   }
-
 }
-.swiper-button-next{
-  @apply text-white text-sm
+.swiper-button-next {
+  @apply text-white text-sm;
 }
 
-body{
-
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
