@@ -73,7 +73,7 @@ const ForYouSlider = () => {
             grid: { rows: 2 },
           },
         }}
-        className="w-full"
+        className="w-full flex flex-nowrap"
       >
         {[...Array(15)].map((_, index) => (
           <SwiperSlide key={index}>
