@@ -52,7 +52,7 @@ export const CollectionWidget = () => {
       </div>
       <div className="h-full ">
         <Swiper
-         className="h-full"
+         className="h-full grid grid-cols-2 xs:grid-cols-3 md:grid-cols-2 lg:grid-cols-3"
           modules={[Navigation]}
           spaceBetween={10}
           slidesPerView={3}
