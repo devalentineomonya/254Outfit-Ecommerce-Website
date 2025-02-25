@@ -52,13 +52,19 @@ const MobileFilter = () => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 ${
-        isMobileFilterOpen ? "block" : "hidden"
+      className={`h-screen w-full fixed top-0 bg-black z-50 transition-all duration-300 ${
+        isMobileFilterOpen
+          ? "bg-opacity-50 left-0"
+          : "bg-opacity-0 -left-[5000px]"
       }`}
     >
-      <div className="fixed inset-0 bg-black/50" onClick={toggleMobileFilter} />
+      <div
 
-      <div className="fixed right-0 top-0 h-full w-full max-w-xs bg-white shadow-xl">
+        className={`fixed  top-0 h-full w-full max-w-xs bg-white shadow-xl ${
+          isMobileFilterOpen ? "left-0" : "-left-96"
+        }
+       `}
+      >
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-bold">Filters</h2>
           <button
