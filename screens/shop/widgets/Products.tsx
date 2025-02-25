@@ -11,7 +11,6 @@ import { useShopFilter } from "@/hooks/useFilter";
 const Products = () => {
   const { layout } = useLayout();
   const {
-    isMobileFilterOpen,
     toggleMobileFilter,
   } = useShopFilter();
   // Animation variants
