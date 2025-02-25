@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   Accordion,
@@ -15,6 +15,7 @@ const Filters = () => {
     errors,
     setFilter,
     toggleArrayFilter,
+    toggleTupleFilter,
     validateFilters,
     clearFilters,
   } = useShopFilter();
@@ -47,7 +48,9 @@ const Filters = () => {
                       <input
                         type="checkbox"
                         checked={filters.categories?.includes(category)}
-                        onChange={() => toggleArrayFilter('categories', category)}
+                        onChange={() =>
+                          toggleArrayFilter("categories", category)
+                        }
                         className="w-4 h-4"
                       />
                       <span>{category}</span>
@@ -65,21 +68,25 @@ const Filters = () => {
                   <input
                     type="number"
                     placeholder="Min"
-                    value={filters.price.min ?? ''}
-                    onChange={(e) => setFilter('price', {
-                      ...filters.price,
-                      min: Number(e.target.value) || null
-                    })}
+                    value={filters.price.min ?? ""}
+                    onChange={(e) =>
+                      setFilter("price", {
+                        ...filters.price,
+                        min: Number(e.target.value) || null,
+                      })
+                    }
                     className="w-1/2 p-2 border rounded"
                   />
                   <input
                     type="number"
                     placeholder="Max"
-                    value={filters.price.max ?? ''}
-                    onChange={(e) => setFilter('price', {
-                      ...filters.price,
-                      max: Number(e.target.value) || null
-                    })}
+                    value={filters.price.max ?? ""}
+                    onChange={(e) =>
+                      setFilter("price", {
+                        ...filters.price,
+                        max: Number(e.target.value) || null,
+                      })
+                    }
                     className="w-1/2 p-2 border rounded"
                   />
                 </div>
@@ -102,8 +109,8 @@ const Filters = () => {
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={filters.sizes.includes(size)}
-                          onChange={() => toggleArrayFilter('sizes', size)}
+                          checked={filters.sizes?.includes(size)}
+                          onChange={() => toggleTupleFilter("sizes", size)}
                           className="w-4 h-4"
                         />
                         <span>{size}</span>
@@ -124,8 +131,8 @@ const Filters = () => {
                     <label key={brand} className="flex items-center gap-2">
                       <input
                         type="checkbox"
-                        checked={filters.brands.includes(brand)}
-                        onChange={() => toggleArrayFilter('brands', brand)}
+                        checked={filters.brands?.includes(brand)}
+                        onChange={() => toggleArrayFilter("brands", brand)}
                         className="w-4 h-4"
                       />
                       <span>{brand}</span>
@@ -149,7 +156,7 @@ const Filters = () => {
                         <input
                           type="checkbox"
                           checked={filters.colors?.includes(color)}
-                          onChange={() => toggleArrayFilter('colors', color)}
+                          onChange={() => toggleTupleFilter("colors", color)}
                           className="w-4 h-4"
                         />
                         <div className="flex items-center gap-1">
