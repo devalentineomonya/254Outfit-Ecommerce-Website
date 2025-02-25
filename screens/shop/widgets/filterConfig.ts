@@ -7,9 +7,17 @@ export const filterSchema = z
       min: z.number().nullable().optional(),
       max: z.number().nullable().optional(),
     }),
-    sizes: z.array(z.string()).optional(),
+    sizes: z
+      .array(
+        z.tuple([z.string(), z.number()])
+      )
+      .optional(),
     brands: z.array(z.string()).optional(),
-    colors: z.array(z.string()).optional(),
+    colors: z
+      .array(
+        z.tuple([z.string(), z.number()])
+      )
+      .optional(),
   })
   .superRefine((data, ctx) => {
     const hasFilters =
@@ -39,7 +47,14 @@ export const filterSchema = z
 
 export type FilterFormValues = z.infer<typeof filterSchema>;
 
-export const filterConfig = {
+type FilterTuple = [string, number];
+
+export const filterConfig: {
+  categories: string[];
+  sizes: FilterTuple[];
+  brands: string[];
+  colors: FilterTuple[];
+} = {
   categories: [
     "Accessories",
     "Cooking",
@@ -56,7 +71,7 @@ export const filterConfig = {
     ["Large", 4],
     ["Medium", 0],
     ["Small", 0],
-  ],
+  ] as [string, number][],
   brands: ["Elegant Auto Group", "Green Grass", "Node Node"],
   colors: [
     ["Black", 9],
@@ -73,5 +88,5 @@ export const filterConfig = {
     ["Orange", 1],
     ["Red", 3],
     ["Yellow", 3],
-  ],
+  ] as [string, number][],
 };
