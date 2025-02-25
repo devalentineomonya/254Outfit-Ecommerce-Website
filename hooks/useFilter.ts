@@ -4,6 +4,7 @@ import {
   filterSchema,
   type FilterFormValues,
 } from "@/screens/shop/widgets/filterConfig";
+
 type FilterState = {
   filters: FilterFormValues;
   errors: Record<string, string>;
@@ -12,9 +13,13 @@ type FilterState = {
     key: K,
     value: FilterFormValues[K]
   ) => void;
-  toggleArrayFilter: <K extends keyof FilterFormValues>(
+  toggleArrayFilter: <K extends "brands" | "categories">(
     key: K,
     value: string
+  ) => void;
+  toggleTupleFilter: <K extends "sizes" | "colors">(
+    key: K,
+    value: [string, number]
   ) => void;
   toggleMobileFilter: () => void;
   validateFilters: () => boolean;
@@ -38,15 +43,12 @@ export const useShopFilter = create<FilterState>()(
       isMobileFilterOpen: false,
 
       setFilter: (key, value) => {
-        set((state) => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const { [key]: _, ...restErrors } = state.errors;
-
-          return {
-            filters: { ...state.filters, [key]: value },
-            errors: restErrors,
-          };
-        });
+        set((state) => ({
+          filters: { ...state.filters, [key]: value },
+          errors: Object.fromEntries(
+            Object.entries(state.errors).filter(([k]) => k !== key)
+          ),
+        }));
       },
 
       toggleArrayFilter: (key, value) => {
@@ -55,12 +57,29 @@ export const useShopFilter = create<FilterState>()(
           const newArray = currentArray.includes(value)
             ? currentArray.filter((item) => item !== value)
             : [...currentArray, value];
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const { [key]: _, ...restErrors } = state.errors;
 
           return {
             filters: { ...state.filters, [key]: newArray },
-            errors: restErrors,
+            errors: Object.fromEntries(
+              Object.entries(state.errors).filter(([k]) => k !== key)
+            ),
+          };
+        });
+      },
+
+      toggleTupleFilter: (key, value) => {
+        set((state) => {
+          const currentArray = state.filters[key] as Array<[string, number]>;
+          const exists = currentArray.some(([name]) => name === value[0]);
+          const newArray = exists
+            ? currentArray.filter(([name]) => name !== value[0])
+            : [...currentArray, value];
+
+          return {
+            filters: { ...state.filters, [key]: newArray },
+            errors: Object.fromEntries(
+              Object.entries(state.errors).filter(([k]) => k !== key)
+            ),
           };
         });
       },
@@ -72,7 +91,6 @@ export const useShopFilter = create<FilterState>()(
             const path = issue.path.join(".");
             return { ...acc, [path]: issue.message };
           }, {});
-
           set({ errors });
           return false;
         }
