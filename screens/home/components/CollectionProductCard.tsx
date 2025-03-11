@@ -8,7 +8,6 @@ const CollectionProductCard = () => {
   const handleQuickPreview = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    // e.stopImmediatePropagation()
     console.log("Quick Preview");
   };
   return (
