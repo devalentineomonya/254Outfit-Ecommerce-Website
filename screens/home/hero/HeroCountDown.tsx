@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 const HeroCountDown = () => {
   return (
-    <figure className="flex flex-col justify-between md:justify-center items-center p-0 md:p-8">
+    <figure className="flex flex-col justify-between md:justify-center items-center p-1 lg:p-8">
       <h1 className="font-medium whitespace-nowrap text-xl xl:text-2xl text-white capitalize mb-2">Hot Deals Of The Day</h1>
       <div className="max-h-64 w-full hidden md:block overflow-hidden">
         <Image src={image7} alt="Hero image" priority  />

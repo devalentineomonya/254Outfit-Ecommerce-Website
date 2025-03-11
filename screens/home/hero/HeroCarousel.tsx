@@ -54,7 +54,7 @@ const HeroCarousel = () => {
         slidesPerView={1}
       >
         {[...Array(4)].map((_, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="min-h-72" key={index}>
             <HeroCarouselItem />
           </SwiperSlide>
         ))}
