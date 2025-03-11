@@ -46,7 +46,7 @@ const NavbarMobile = () => {
             {link.subLinks && (
               <ul
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  openDropdowns.includes(link.name) ? "max-h-48" : "max-h-0"
+                  openDropdowns.includes(link.name) ? "max-h-56" : "max-h-0"
                 }`}
               >
                 {renderNavLinks(link.subLinks, level + 1)}
