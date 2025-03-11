@@ -36,15 +36,9 @@ const MobileFilter = () => {
 
   const onSubmit: SubmitHandler<FilterFormValues> = async (data) => {
     try {
-      const payload = {
-        ...data,
-        price: {
-          min: data.price.min || undefined,
-          max: data.price.max || undefined,
-        },
-      };
-      console.log("Submitting filters:", payload);
-      toggleMobileFilter(); // Close sidebar after submission
+
+      console.log("Submitting filters:", data);
+      toggleMobileFilter();
     } catch (error) {
       console.error("Filter submission error:", error);
     }

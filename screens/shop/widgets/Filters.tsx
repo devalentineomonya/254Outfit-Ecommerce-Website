@@ -38,7 +38,6 @@ const Filters = () => {
 
         <div className="space-y-6 bg-white p-3">
           <Accordion type="multiple" className="w-full">
-            {/* Categories Filter */}
             <AccordionItem value="categories">
               <AccordionTrigger>All Categories</AccordionTrigger>
               <AccordionContent>
@@ -60,7 +59,6 @@ const Filters = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Price Filter */}
             <AccordionItem value="price">
               <AccordionTrigger>Price</AccordionTrigger>
               <AccordionContent>
@@ -96,7 +94,6 @@ const Filters = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Size Filter */}
             <AccordionItem value="size">
               <AccordionTrigger>Size</AccordionTrigger>
               <AccordionContent>
@@ -109,8 +106,10 @@ const Filters = () => {
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={filters.sizes?.includes(size)}
-                          onChange={() => toggleTupleFilter("sizes", size)}
+                          checked={filters.sizes?.includes([size, count])}
+                          onChange={() =>
+                            toggleTupleFilter("sizes", [size, count])
+                          }
                           className="w-4 h-4"
                         />
                         <span>{size}</span>
@@ -122,7 +121,6 @@ const Filters = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Brand Filter */}
             <AccordionItem value="brand">
               <AccordionTrigger>Brand</AccordionTrigger>
               <AccordionContent>
@@ -142,7 +140,6 @@ const Filters = () => {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Color Filter */}
             <AccordionItem value="color">
               <AccordionTrigger>Color</AccordionTrigger>
               <AccordionContent>
@@ -155,8 +152,10 @@ const Filters = () => {
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={filters.colors?.includes(color)}
-                          onChange={() => toggleTupleFilter("colors", color)}
+                          checked={filters.colors?.includes([color, count])}
+                          onChange={() =>
+                            toggleTupleFilter("colors", [color, count])
+                          }
                           className="w-4 h-4"
                         />
                         <div className="flex items-center gap-1">
