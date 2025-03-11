@@ -16,7 +16,13 @@ const SortingControls = () => {
     console.log("Selected sorting:", value);
   };
   return (
-    <FilterSelect showLabel label="Sort By:" options={sortingOptions} onSelectChange={handleSortChange} />
+    <FilterSelect
+      showLabel
+      filterButton
+      label="Sort By:"
+      options={sortingOptions}
+      onSelectChange={handleSortChange}
+    />
   );
 };
 

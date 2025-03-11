@@ -1,13 +1,14 @@
-// FilterSelect.tsx (Reusable Component)
 "use client";
 import React from "react";
-
+import { useShopFilter } from "@/hooks/useFilter";
+import { BsFilter } from "react-icons/bs";
 interface FilterSelectProps {
   options: { value: string; label: string }[];
   selectedOption?: string;
   onSelectChange: (value: string) => void;
   label?: string;
-  showLabel?:boolean
+  showLabel?: boolean;
+  filterButton?:boolean
 }
 
 const FilterSelect = ({
@@ -15,11 +16,25 @@ const FilterSelect = ({
   selectedOption = "12",
   onSelectChange,
   label = "Show",
-  showLabel=false
+  showLabel = false,
+  filterButton=false
 }: FilterSelectProps) => {
+  const { toggleMobileFilter } = useShopFilter();
   return (
     <div className="flex items-center gap-x-2">
-     {showLabel && <label htmlFor="count" className="hidden md:inline-block">{label}</label>}
+      {showLabel && (
+        <label htmlFor="count" className="hidden lg:inline-block">
+          {label}
+        </label>
+      )}
+      {filterButton && (
+        <button
+          className="lg:hidden  p-1 rounded-md transition-colors text-blue-600 bg-blue-200 grid place-content-center"
+          onClick={toggleMobileFilter}
+        >
+          <BsFilter className="size-7" />
+        </button>
+      )}
       <div className="relative max-w-44">
         <select
           name="count"
