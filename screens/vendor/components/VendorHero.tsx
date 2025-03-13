@@ -37,16 +37,16 @@ const VendorHero = () => {
     { icon: <FaPinterestP size={16} />, name: "pinterest" },
   ];
   return (
-    <div className="w-full lg:aspect-[20/9] rounded-md overflow-hidden grid grid-cols-12 relative">
-      <div className="w-16 aspect-square rounded-full overflow-hidden">
-        <Image
-          src="/avatar.png"
-          alt="Vendor Profile"
-          width={100}
-          height={100}
-        />
-      </div>
-      <div className=" col-span-12 lg:col-span-4 bg-black/80 text-white h-full relative z-10 p-5 xl:p-10">
+    <div className="w-full aspect-[20/9] rounded-md overflow-hidden grid grid-cols-12 relative">
+      <div className=" col-span-12 lg:col-span-4 bg-black/80 text-white h-full relative z-10 e"></div>p-10">
+        <div className="w-16 aspect-square rounded-full overflow-hidden">
+          <Image
+            src="/avatar.png"
+            alt="Vendor Profile"
+            width={100}
+            height={100}
+          />
+        </div>
         <h2 className="text-lg font-semibold my-4 ">Vendor 1</h2>
         <ul className="text-gray-200 space-y-5">
           {vendorInfo.map((item, index) => (
