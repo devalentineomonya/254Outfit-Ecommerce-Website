@@ -46,9 +46,9 @@ const VendorHeader = () => {
         />
       </div>
       <div
-        className={`w-full flex items-center gap-x-4 bg-white ${
+        className={`w-full flex items-center gap-x-4 bg-white shadow-md ${
           isSearchOpen ? " h-[4.2rem]  mb-3 p-4 " : "h-0"
-        } transtion-all ease-in-out duration-300 `}
+        } transition-all ease-in-out duration-300 `}
       >
         <input
         placeholder="Search Vendor "
