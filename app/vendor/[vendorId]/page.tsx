@@ -1,6 +1,7 @@
 import Filters from "@/screens/shop/widgets/Filters";
 import VendorPage from "@/screens/vendor/widgets/VendorPage";
 import MobileFilter from "@/screens/shop/widgets/MobileFilter";
+import FilterToggler from "@/screens/vendor/components/FilterToggler";
 
 const Vendor = () => {
   return (
@@ -8,6 +9,7 @@ const Vendor = () => {
       <Filters />
       <VendorPage />
       <MobileFilter />
+      <FilterToggler/>
     </section>
   );
 };
