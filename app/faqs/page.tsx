@@ -1,9 +1,12 @@
-import React from 'react'
+import FaqPage from "@/screens/faqs/widgets/FaqPage";
+import React from "react";
 
 const FAQs = () => {
   return (
-    <div>FAQs</div>
-  )
-}
+    <div className="">
+      <FaqPage />
+    </div>
+  );
+};
 
-export default FAQs
+export default FAQs;
