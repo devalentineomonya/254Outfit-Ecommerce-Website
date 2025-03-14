@@ -23,7 +23,7 @@ const VendorPage = () => {
     <div className="w-full">
       <VendorHero />
       <div className="border p-4 rounded-md my-4">Products</div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center flex-wrap gap-y-3">
         <VendorProductSearch />
         <FilterSelect
           onSelectChange={handleItemsPerPageChange}
