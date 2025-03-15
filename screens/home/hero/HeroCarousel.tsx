@@ -60,7 +60,6 @@ const HeroCarousel = () => {
         ))}
       </Swiper>
 
-      {/* Custom Navigation Buttons */}
       {!isMobile && (
         <>
           <button
