@@ -13,7 +13,6 @@ const Footer = () => {
   return (
     <div className="bg-white flex flex-col items-center justify-start mt-12">
       <div className="max-w-8xl w-full px-6">
-        {/* Footer Links */}
         <div className="py-12 border-b border-b-gray-300">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-6 xl:grid-cols-5">
             {footerLinksData.map((footerLink) => (
@@ -26,10 +25,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Details */}
         <div className="py-12 border-b border-b-gray-300">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-7 w-full">
-            {/* Logo & Description */}
             <div>
               <Logo  />
               <p className="font-light text-sm text-gray-500 my-4 leading-relaxed">
@@ -43,7 +40,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Service Center */}
             <div>
               <h2 className="font-semibold text-gray-900 text-lg leading-loose">
                 Service Center
@@ -73,7 +69,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Shipping Center */}
             <div>
               <h2 className="font-semibold text-gray-900 text-lg leading-loose">
                 Shipping Center
@@ -104,7 +99,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Newsletter */}
             <div>
               <h2 className="font-semibold text-gray-900 text-lg leading-loose">
                 Newsletter
@@ -129,7 +123,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
         <div className="py-3 flex items-center justify-between font-light text-xs text-gray-500">
           <p>
             Copyright © {new Date().getFullYear()}{" "}
