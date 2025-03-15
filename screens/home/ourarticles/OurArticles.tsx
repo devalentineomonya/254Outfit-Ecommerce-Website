@@ -50,7 +50,6 @@ const OurArticles = () => {
         </Swiper>
       </div>
 
-      {/* Pagination container */}
       <div className="articles-pagination flex justify-center gap-[0.375rem] mt-4" />
     </section>
   );
