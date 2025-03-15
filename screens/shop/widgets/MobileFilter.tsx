@@ -75,7 +75,6 @@ const MobileFilter = () => {
             className="h-[calc(100%-4rem)] flex flex-col"
           >
             <div className="flex-1 overflow-y-auto p-4">
-              {/* Categories Filter */}
               <div className="border-b">
                 <button
                   type="button"
@@ -106,7 +105,6 @@ const MobileFilter = () => {
                 )}
               </div>
 
-              {/* Price Filter */}
               <div className="border-b">
                 <button
                   type="button"
@@ -153,7 +151,6 @@ const MobileFilter = () => {
                 )}
               </div>
 
-              {/* Size Filter */}
               <div className="border-b">
                 <button
                   type="button"
@@ -190,7 +187,6 @@ const MobileFilter = () => {
                 )}
               </div>
 
-              {/* Brand Filter */}
               <div className="border-b">
                 <button
                   type="button"
@@ -221,7 +217,6 @@ const MobileFilter = () => {
                 )}
               </div>
 
-              {/* Color Filter */}
               <div className="border-b">
                 <button
                   type="button"
