@@ -2,6 +2,21 @@ import { Accordion } from "../compoents/Accordion";
 import Image from "next/image";
 
 const Services = () => {
+  const accordionItems = [
+    {
+      title: "Sales Management",
+      content: "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
+    },
+    {
+      title: "Sales Management",
+      content: "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
+    },
+    {
+      title: "Sales Management",
+      content: "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
+    },
+  ];
+
   return (
     <section className="px-4 grid grid-cols-2 h-[520px] justify-center items-center gap-x-8 my-6">
       <div className="h-full w-full ">
@@ -9,25 +24,7 @@ const Services = () => {
           We Provide Continuous & Kind Service for Customers
         </h1>
 
-        <Accordion
-          items={[
-            {
-              title: "Sales Management",
-              content:
-                "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
-            },
-            {
-              title: "Sales Management",
-              content:
-                "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
-            },
-            {
-              title: "Sales Management",
-              content:
-                "Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit...",
-            },
-          ]}
-        />
+        <Accordion items={accordionItems} />
       </div>
       <div className="relative w-full h-full rounded-md overflow-hidden ">
         <Image
