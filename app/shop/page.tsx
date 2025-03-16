@@ -5,7 +5,9 @@ import MobileFilter from '@/screens/shop/widgets/MobileFilter'
 
 const Shop = () => {
   return (
-    <section className='flex mt-12  px-2'>
+
+ <section className='flex mt-12  px-2'>
+
         <Filters/>
         <Products/>
         <MobileFilter/>
