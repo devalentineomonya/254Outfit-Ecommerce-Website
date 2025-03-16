@@ -6,15 +6,23 @@ const faqData = [
     items: [
       {
         question: "What Shipping Methods are Available?",
-        answer: "We offer standard and expedited shipping options...",
+        answer:
+          "Commodo id occaecat fugiat id veniam fugiat esse incididunt sint labore. Eiusmod sint id consequat esse exercitation nisi aliqua. Nostrud et aliqua labore sunt ipsum laboris proident culpa nulla duis cillum. Dolore quis ipsum do duis sit commodo magna amet ut nulla est",
       },
       {
         question: "Do You Ship Internationally?",
-        answer: "Yes, we ship to most countries worldwide...",
+        answer:
+          "Commodo id occaecat fugiat id veniam fugiat esse incididunt sint labore. Eiusmod sint id consequat esse exercitation nisi aliqua. Nostrud et aliqua labore sunt ipsum laboris proident culpa nulla duis cillum. Dolore quis ipsum do duis sit commodo magna amet ut nulla est",
       },
       {
         question: "How Long Will it Take to Get My Package?",
-        answer: "Standard shipping typically takes 3-5 business days...",
+        answer:
+          "Commodo id occaecat fugiat id veniam fugiat esse incididunt sint labore. Eiusmod sint id consequat esse exercitation nisi aliqua. Nostrud et aliqua labore sunt ipsum laboris proident culpa nulla duis cillum. Dolore quis ipsum do duis sit commodo magna amet ut nulla est",
+      },
+      {
+        question: "How Long Will it Take to Get My Package?",
+        answer:
+          "Commodo id occaecat fugiat id veniam fugiat esse incididunt sint labore. Eiusmod sint id consequat esse exercitation nisi aliqua. Nostrud et aliqua labore sunt ipsum laboris proident culpa nulla duis cillum. Dolore quis ipsum do duis sit commodo magna amet ut nulla est",
       },
     ],
   },
