@@ -5,11 +5,26 @@ import { z } from "zod";
 import { motion } from "framer-motion";
 
 const faqItems = [
-  { question: "How can I cancel my order?", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { question: "Why is my registration delayed?", answer: "Your registration might be delayed due to verification." },
-  { question: "What do I need to buy products?", answer: "You need to create an account and add a payment method." },
-  { question: "How can I track an order?", answer: "You can track your order from the dashboard under 'Orders'." },
-  { question: "How can I get money back?", answer: "Refunds are processed within 3-5 business days." },
+  {
+    question: "How can I cancel my order?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    question: "Why is my registration delayed?",
+    answer: "Your registration might be delayed due to verification.",
+  },
+  {
+    question: "What do I need to buy products?",
+    answer: "You need to create an account and add a payment method.",
+  },
+  {
+    question: "How can I track an order?",
+    answer: "You can track your order from the dashboard under 'Orders'.",
+  },
+  {
+    question: "How can I get money back?",
+    answer: "Refunds are processed within 3-5 business days.",
+  },
 ];
 
 // Form Schema
@@ -21,9 +36,13 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const FAQContact = () => {
+const Form = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
 
@@ -42,7 +61,9 @@ const FAQContact = () => {
               <div key={index} className="border rounded-md overflow-hidden">
                 <button
                   className="w-full p-4 text-left font-semibold bg-gray-100 flex justify-between"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
                 >
                   {item.question}
                   <span>{openIndex === index ? "−" : "+"}</span>
@@ -73,7 +94,9 @@ const FAQContact = () => {
                 {...register("name")}
                 className="w-full p-3 border rounded-md"
               />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
+              )}
             </div>
 
             <div>
@@ -83,7 +106,9 @@ const FAQContact = () => {
                 {...register("email")}
                 className="w-full p-3 border rounded-md"
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
+              )}
             </div>
 
             <div>
@@ -92,7 +117,9 @@ const FAQContact = () => {
                 {...register("message")}
                 className="w-full p-3 border rounded-md"
               />
-              {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+              {errors.message && (
+                <p className="text-red-500 text-sm">{errors.message.message}</p>
+              )}
             </div>
 
             <button
@@ -108,4 +135,4 @@ const FAQContact = () => {
   );
 };
 
-export default FAQContact;
+export default Form;
