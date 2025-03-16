@@ -27,7 +27,6 @@ const faqItems = [
   },
 ];
 
-// Form Schema
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
@@ -53,7 +52,6 @@ const Form = () => {
   return (
     <div className="max-w-5xl mx-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* FAQ Section */}
         <div>
           <h2 className="text-xl font-bold">People usually ask these</h2>
           <div className="mt-4 space-y-2">
@@ -83,7 +81,6 @@ const Form = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div>
           <h2 className="text-xl font-bold">Send Us a Message</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
