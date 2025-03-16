@@ -1,11 +1,11 @@
-importForm from "@/components/ContactInfo";
-import FAQContact from "@/components/FAQContact";
+import Form from "@/screens/contact/widgets/Form";
+import Faqs from "@/screens/contact/widgets/Faqs";
 
 export default function ContactPage() {
   return (
     <div>
-      <ContactInfo />
-      <FAQContact />
+      <Form />
+      <Faqs />
     </div>
   );
 }
