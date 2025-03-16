@@ -1,9 +1,11 @@
-import React from 'react'
+import ContactInfo from "@/components/ContactInfo";
+import FAQContact from "@/components/FAQContact";
 
-const ContactUs = () => {
+export default function ContactPage() {
   return (
-    <div>ContactUs</div>
-  )
+    <div>
+      <ContactInfo />
+      <FAQContact />
+    </div>
+  );
 }
-
-export default ContactUs
