@@ -1,6 +1,6 @@
 const Stats = () => {
   return (
-    <section className="container mx-auto px-4 py-16">
+    <section className=" px-4 py-16">
       <div className="grid md:grid-cols-3 gap-8 text-center">
         <div className="space-y-4">
           <div className="text-5xl font-bold text-blue-600">15M+</div>
