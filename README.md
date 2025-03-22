@@ -1,4 +1,4 @@
-# 254Outfit E-commerce Website
+# 254Outfit E-commerce Website Kenya 
 
 Welcome to the **254Outfit E-commerce Website** repository! This project is a specialized e-commerce platform designed exclusively for outfit shopping within Kenya (254). It provides a seamless shopping experience with features tailored for users in Kenya, integrating modern web technologies and secure payment options.
 
